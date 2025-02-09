@@ -1,12 +1,16 @@
+import { ExpenseFilter } from "./expenseFIlter";
 import classes from "./expenses.module.css"
 
 export const Expenses = (props) => {
   return (
-    <ul className={classes.list}>
+   <div>
+    <ExpenseFilter/>
+     <ul className={classes.list}>
       {props.expenses.map((item) => {
         return <ExpenseItem {...item} key={item.id} />;
       })}
     </ul>
+   </div>
   );
 };
 
