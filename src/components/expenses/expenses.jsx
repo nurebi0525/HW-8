@@ -1,10 +1,17 @@
+import { useState } from "react";
 import { ExpenseFilter } from "./expenseFIlter";
 import classes from "./expenses.module.css"
 
 export const Expenses = (props) => {
+  const [selectedYear, setSElectedYear] = useState("All");
+
+const yearChangeHandler = () => {
+  
+}
+
   return (
    <div>
-    <ExpenseFilter/>
+    <ExpenseFilter value={selectedYear} onchange={yearChangeHandler}/>
      <ul className={classes.list}>
       {props.expenses.map((item) => {
         return <ExpenseItem {...item} key={item.id} />;
